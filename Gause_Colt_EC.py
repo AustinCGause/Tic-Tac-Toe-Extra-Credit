@@ -69,7 +69,7 @@ def win_condition():
                 board_state()
                 print('Player x wins!')
                 return True
-
+    
     if board[0][0] == o:
         if board[0][1] == o:
             if board[0][2] == o:
@@ -144,6 +144,11 @@ while turn < 9 and game_over != True:
             print('Cell Occupied.')
             selected_space = ' '
 
-if turn == 9:
+game_over = win_condition()
+
+if game_over != True:
     board_state()
     print('Tie')
+else:
+    board_state()
+    print('Player x Wins!')
